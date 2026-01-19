@@ -1,5 +1,3 @@
---!strict
-
 -- localization
 local game, table, debug = game, table, debug;
 local tableInsert, tableRemove, tableClear = table.insert, table.remove, table.clear;
@@ -201,6 +199,8 @@ local Construct = {}; do
 
     function Construct:Clear()
         for _, drawing in self._drawings do
+            drawing.Visible = false;
+            drawing.Transparency = 0;
             drawing:Destroy();
         end
 
